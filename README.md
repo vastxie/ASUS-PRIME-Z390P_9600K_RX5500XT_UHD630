@@ -1,12 +1,12 @@
 # ASUS-PRIME-Z390-P_i5-9600K_RX5500XT
 黑苹果OpenCore EFI分享: 华硕Z390P + i5-9600K + RX5500XT
 
-参考[OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对EFI及config.plist做了精简和设置。
+参考[OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对`EFI`及`config.plist`做了精简和设置。
 
 本人电脑基本不关机，不用的时候关掉显示屏，目前日常体验接近白苹果，暂未发现其他问题。
 
 ## 更新
-+ 2021-01-10：升级OpenCore 0.6.5和macOS 11.1，使用一切正常。
++ 2021-01-10：升级OpenCore`0.6.5`和macOS`11.1`，使用一切正常。
 
 ## 硬件及驱动
 | 配置      | 品牌                  | 型号                | 驱动                                                                                 |
@@ -20,31 +20,19 @@
 | 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases)                    |
 | 板载网卡  | Realtek®              | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases)     |
 | 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases)                |
-| USB       |                       |                     | [USBInjectALL](https://github.com/Sniki/OS-X-USB-Inject-All/releases)                |
+| USB       |                       |                     | [USBInjectALL.kext](https://github.com/Sniki/OS-X-USB-Inject-All/releases)           |
 | 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases)                            |
 
 ## Bios设置
 BIOS版本：2808，加载默认设置后做了以下修改：
-+ Intel(VMX)Virtualization Technology [Enabled]
-+ 大于4G地址空间解码 [Enabled]
-+ 初始化iGPU [Enabled]
-+ Hyper M.2X16 [Enabled]
-+ Serial Port [Disabled]
-+ XHCI Hand-off [Enabled]
-+ 快速启动 [Disabled]
-+ 若出现错误等待按下F1键 [Disabled]
-
-## Tips
-1. 机型默认设定为iMAC19.1，使用前建议自行生成三码并在config.plist -> PlatformInfo -> Generic中对应修改。（可使用OpenCore Configurator或 [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
-   | 内容         | 对应位置                      |
-   | ------------ | ----------------------------- |
-   | Type         | Generic -> SystemProductName  |
-   | Serial       | Generic -> SystemSerialNumber |
-   | Board Serial | Generic -> MLB                |
-   | SmUUID       | Generic -> SystemUUID         |
-2. 显卡原生驱动。此外在ACPI中添加了SSDT-RX 5500 XT.aml并配合dAGPM.kext驱动来释放显卡性能。
-3. AirDrop & HandOff & Continuity 均能正常使用。
-4. 有线网卡使用RealtekRTL8111.kext正常驱动。
++ Intel(VMX)Virtualization Technology `Enabled`
++ 大于4G地址空间解码 `Enabled`
++ 初始化iGPU `Enabled`
++ Hyper M.2X16 `Enabled`
++ Serial Port `Disabled`
++ XHCI Hand-off `Enabled`
++ 快速启动 `Disabled`
++ 若出现错误等待按下F1键 `Disabled`
 
 ## EFI目录
 ```
@@ -53,11 +41,11 @@ BIOS版本：2808，加载默认设置后做了以下修改：
 │   └── BOOTx64.efi
 └── OC
     ├── ACPI
-    │   ├── SSDT-AWAC.aml
-    │   ├── SSDT-EC-USBX.aml
-    │   ├── SSDT-PLUG.aml
-    │   ├── SSDT-PMC.aml
-    │   └── SSDT-RX 5500 XT.aml
+    │   ├── SSDT-AWAC.aml // 修复在较新硬件上的系统时钟。
+    │   ├── SSDT-EC-USBX.aml // 修复嵌入式控制器和USB电源。
+    │   ├── SSDT-PLUG.aml // CPU电源管理。
+    │   ├── SSDT-PMC.aml // NVRAM支持。
+    │   └── SSDT-RX 5500 XT.aml // 优化RX5500XT显卡性能。
     ├── Drivers
     │   ├── HfsPlus.efi
     │   └── OpenRuntime.efi
@@ -74,3 +62,16 @@ BIOS版本：2808，加载默认设置后做了以下修改：
     ├── OpenCore.efi
     └── config.plist
 ```
+
+## Tips
+1. 机型默认设定为iMAC19.1，使用前建议自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用OpenCore Configurator或 [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
+   | 内容         | 对应位置                          |
+   | ------------ | --------------------------------- |
+   | Type         | `Generic` -> `SystemProductName`  |
+   | Serial       | `Generic` -> `SystemSerialNumber` |
+   | Board Serial | `Generic` -> `MLB`                |
+   | SmUUID       | `Generic` -> `SystemUUID`         |
+2. RX5500XT显卡原生驱动。此外在ACPI中添加了`SSDT-RX 5500 XT.aml`并配合`dAGPM.kext`驱动来优化显卡性能。
+3. AirDrop & HandOff & Continuity 均能正常使用。
+4. 有线网卡使用`RealtekRTL8111.kext`正常驱动。
+5. EFI目录中标注了当前使用的驱动版本，可下载并在`./EFI/OC/Kexts/`目录中替换相关驱动进行升级。
