@@ -9,12 +9,14 @@
 + 2021-01-10：升级OpenCore 0.6.5和macOS 11.1，使用一切正常。
 
 ## 硬件配置
-1. 主板：华硕（ASUS）PRIME Z390-P
-2. CPU：英特尔（Intel）i5-9600K
-3. 显卡：蓝宝石（Sapphire）RX 5500 XT
-4. WiFi/蓝牙：Fenvi FV-T919 BCM94360CD
-5. 内存：美商海盗船(USCORSAIR) DDR4 3600（8G * 4）
-6. 硬盘：三星（SAMSUNG）970PRO 512G
+| 配置      | 型号                                      |
+| --------- | ----------------------------------------- |
+| 主板      | 华硕（ASUS）PRIME Z390-P                  |
+| CPU       | 英特尔（Intel）i5-9600K                   |
+| 显卡      | 蓝宝石（Sapphire）RX 5500 XT              |
+| WiFi/蓝牙 | Fenvi FV-T919 BCM94360CD                  |
+| 内存      | 美商海盗船(USCORSAIR) DDR4 3600（8G * 4） |
+| 硬盘      | 三星（SAMSUNG）970PRO 512G                |
 
 ## Bios设置
 BIOS版本：2808，加载默认设置后做了以下修改：
