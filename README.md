@@ -28,7 +28,7 @@ BIOS版本：2808，加载默认设置后做了以下修改：
 + 若出现错误等待按下F1键 [Disabled]
 
 ## Tips
-1. 机型默认设定为iMAC19.1,使用前建议自行生成三码并在config.plist -> PlatformInfo -> Generic中对应修改。（可使用OpenCore Configurator或 [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)生成）
+1. 机型默认设定为iMAC19.1，使用前建议自行生成三码并在config.plist -> PlatformInfo -> Generic中对应修改。（可使用OpenCore Configurator或 [GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)生成）
    | 内容         | 对应位置                      |
    | ------------ | ----------------------------- |
    | Type         | Generic -> SystemProductName  |
