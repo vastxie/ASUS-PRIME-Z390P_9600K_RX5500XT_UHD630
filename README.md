@@ -3,7 +3,7 @@
 
 参考[OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对EFI及config.plist做了精简和设置。
 
-本人日常电脑基本不关机，不用的时候关掉显示屏，目前日常体验非常完美。若在使用中遇到问题，欢迎在Issues中与我交流反馈。
+本人日常电脑基本不关机，不用的时候关掉显示屏，目前日常体验非常完美。
 
 ## 更新
 + 2021-01-10：升级OpenCore 0.6.5和macOS 11.1，使用一切正常。
