@@ -3,25 +3,25 @@
 
 参考[OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对EFI及config.plist做了精简和设置。
 
-本人日常电脑基本不关机，不用的时候关掉显示屏，目前日常体验非常完美。
+本人电脑基本不关机，不用的时候关掉显示屏，目前日常体验接近白苹果，暂未发现其他问题。
 
 ## 更新
 + 2021-01-10：升级OpenCore 0.6.5和macOS 11.1，使用一切正常。
 
 ## 硬件及驱动
-| 配置      | 品牌                  | 型号                | 驱动                                                                                                    |
-| --------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------------------- |
-| 主板      | 华硕-（ASUS）         | PRIME Z390-P        |                                                                                                         |
-| CPU       | 英特尔（Intel）       | i5-9600K            |                                                                                                         |
-| 显卡      | 蓝宝石（Sapphire）    | RX 5500 XT          | 原生支持 [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases)                    |
-| WiFi/蓝牙 | 奋威（Fenvi）         | FV-T919 BCM94360CD  | 免驱                                                                                                    |
-| 内存      | 美商海盗船(USCORSAIR) | DDR4 3600（8G * 4） |                                                                                                         |
+| 配置      | 品牌                  | 型号                | 驱动                                                                                 |
+| --------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------ |
+| 主板      | 华硕-（ASUS）         | PRIME Z390-P        |                                                                                      |
+| CPU       | 英特尔（Intel）       | i5-9600K            |                                                                                      |
+| 显卡      | 蓝宝石（Sapphire）    | RX 5500 XT          | 原生支持 [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases) |
+| WiFi/蓝牙 | 奋威（Fenvi）         | FV-T919 BCM94360CD  | 免驱                                                                                 |
+| 内存      | 美商海盗船(USCORSAIR) | DDR4 3600（8G * 4） |                                                                                      |
 | 硬盘      | 三星（SAMSUNG）       | 970PRO 512G         |
-| 声卡      | 瑞昱（RealTek）       | ALC892              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases)                                       |
-| 网卡      | 瑞昱（RealTek）       | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases)                        |
-| 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) SMCProcessor.kext SMCSuperIO.kext |
-| USB       |                       |                     | [USBInjectALL](https://github.com/Sniki/OS-X-USB-Inject-All/releases)                                   |
-| 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases)                                               |
+| 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases)                    |
+| 板载网卡  | Realtek®              | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases)     |
+| 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases)                |
+| USB       |                       |                     | [USBInjectALL](https://github.com/Sniki/OS-X-USB-Inject-All/releases)                |
+| 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases)                            |
 
 ## Bios设置
 BIOS版本：2808，加载默认设置后做了以下修改：
@@ -62,15 +62,15 @@ BIOS版本：2808，加载默认设置后做了以下修改：
     │   ├── HfsPlus.efi
     │   └── OpenRuntime.efi
     ├── Kexts
-    │   ├── AppleALC.kext
-    │   ├── Lilu.kext
-    │   ├── RealtekRTL8111.kext
-    │   ├── SMCProcessor.kext
-    │   ├── SMCSuperIO.kext
-    │   ├── USBInjectAll.kext
-    │   ├── VirtualSMC.kext
-    │   ├── WhateverGreen.kext
-    │   └── dAGPM.kext
+    │   ├── AppleALC.kext // v1.5.6
+    │   ├── Lilu.kext // v1.5.0
+    │   ├── RealtekRTL8111.kext // v2.3.0
+    │   ├── SMCProcessor.kext // v1.1.9
+    │   ├── SMCSuperIO.kext // v1.1.9
+    │   ├── USBInjectAll.kext // v0.7.5
+    │   ├── VirtualSMC.kext // v1.1.9
+    │   ├── WhateverGreen.kext // v1.4.6
+    │   └── dAGPM.kext // v1.0.0
     ├── OpenCore.efi
     └── config.plist
 ```
