@@ -1,5 +1,5 @@
 # ASUS-PRIME-Z390-P_i5-9600K_RX5500XT
-黑苹果EFI分享: OpenCore + ASUS-PRIME-Z390-P + i5-9600K + 5500XT
+黑苹果OpenCore EFI分享: 华硕Z390P + i5-9600K + RX5500XT
 
 参考[OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对EFI及config.plist做了精简和设置。
 
