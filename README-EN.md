@@ -22,19 +22,19 @@ The daily experience is close to Apple Macintosh, and no other problems have bee
 5. The current driver vesion has been marked in EFI directory. you can download and replace the relevant driver in `./EFI/OC/Kexts/` to upgrade.
 
 ## Hardware and Driver
-| Type           | Brand     | Item                | Driver                                                                           |
-| -------------- | --------- | ------------------- | -------------------------------------------------------------------------------- |
-| Motherboard    | ASUS      | PRIME Z390-P        |                                                                                  |
-| CPU            | Intel     | i5-9600K            |                                                                                  |
-| Video Card     | Sapphire  | RX 5500 XT          | [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases)      |
-| WiFi/Bluetooth | Fenvi     | FV-T919 BCM94360CD  | native driver                                                                    |
-| Memory         | USCORSAIR | DDR4 3600（8G * 4） |                                                                                  |
+| Type           | Brand     | Item                | Driver                                                                                  |
+| -------------- | --------- | ------------------- | --------------------------------------------------------------------------------------- |
+| Motherboard    | ASUS      | PRIME Z390-P        |                                                                                         |
+| CPU            | Intel     | i5-9600K            |                                                                                         |
+| Video Card     | Sapphire  | RX 5500 XT          | [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases) v1.4.6      |
+| WiFi/Bluetooth | Fenvi     | FV-T919 BCM94360CD  | native driver                                                                           |
+| Memory         | USCORSAIR | DDR4 3600（8G * 4） |                                                                                         |
 | Storage        | SAMSUNG   | 970PRO 512G         |
-|                | Realtek   | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases)                |
-|                | Realtek®  | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) |
-|                |           |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases)            |
-| USB            |           |                     | [USBInjectALL.kext](https://github.com/Sniki/OS-X-USB-Inject-All/releases)       |
-|                |           |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases)                        |
+| Network Card   | Realtek   | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.5.6                |
+| Sound Card     | Realtek®  | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) v2.3.0 |
+| Sensor         |           |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.1.9            |
+| USB            |           |                     | [USBInjectALL.kext](https://github.com/Sniki/OS-X-USB-Inject-All/releases) v0.7.5       |
+| Other          |           |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases) v1.5.0                        |
 
 ## Bios Setting
 Bios version：2808.

@@ -19,23 +19,23 @@
 2. RX5500XT显卡原生驱动。此外在ACPI中添加了`SSDT-RX 5500 XT.aml`并配合`dAGPM.kext`驱动来优化显卡性能。
 3. AirDrop & HandOff & Continuity 均能正常使用。
 4. 有线网卡使用`RealtekRTL8111.kext`正常驱动。
-5. EFI目录中标注了当前使用的驱动版本，可下载并在`./EFI/OC/Kexts/`目录中替换相关驱动进行升级。
+5. EFI目录中标注了当前使用的驱动版本，可下载并在`./EFI/OC/Kexts/`中替换相关驱动进行升级。
 6. 基于`Coffee Lake`架构的的黑苹果设备均可使用本EFI，根据核显及独显的不同使用，可能需要在`config.plist` -> `DeviceProperties` -> `Add` -> `PciRoot(0x0)/Pci(0x2,0x0)`相应调整。
 
 ## 硬件及驱动
-| 配置      | 品牌                  | 型号                | 驱动                                                                                 |
-| --------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------ |
-| 主板      | 华硕-（ASUS）         | PRIME Z390-P        |                                                                                      |
-| CPU       | 英特尔（Intel）       | i5-9600K            |                                                                                      |
-| 显卡      | 蓝宝石（Sapphire）    | RX 5500 XT          | 原生支持 [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases) |
-| WiFi/蓝牙 | 奋威（Fenvi）         | FV-T919 BCM94360CD  | 免驱                                                                                 |
-| 内存      | 美商海盗船(USCORSAIR) | DDR4 3600（8G * 4） |                                                                                      |
+| 配置      | 品牌                  | 型号                | 驱动                                                                                        |
+| --------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------- |
+| 主板      | 华硕-（ASUS）         | PRIME Z390-P        |                                                                                             |
+| CPU       | 英特尔（Intel）       | i5-9600K            |                                                                                             |
+| 显卡      | 蓝宝石（Sapphire）    | RX 5500 XT          | 原生支持 [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases) v1.4.6 |
+| WiFi/蓝牙 | 奋威（Fenvi）         | FV-T919 BCM94360CD  | 免驱                                                                                        |
+| 内存      | 美商海盗船(USCORSAIR) | DDR4 3600（8G * 4） |                                                                                             |
 | 硬盘      | 三星（SAMSUNG）       | 970PRO 512G         |
-| 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases)                    |
-| 板载网卡  | Realtek®              | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases)     |
-| 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases)                |
-| USB       |                       |                     | [USBInjectALL.kext](https://github.com/Sniki/OS-X-USB-Inject-All/releases)           |
-| 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases)                            |
+| 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.5.6                    |
+| 板载网卡  | Realtek®              | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) v2.3.0     |
+| 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.1.9                |
+| USB       |                       |                     | [USBInjectALL.kext](https://github.com/Sniki/OS-X-USB-Inject-All/releases) v0.7.0           |
+| 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases) v1.5.0                            |
 
 ## Bios设置
 BIOS版本：2808，加载默认设置后做了以下修改：
