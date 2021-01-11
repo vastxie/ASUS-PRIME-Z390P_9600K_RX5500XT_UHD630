@@ -9,7 +9,7 @@
 + 2021-01-10：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5`和macOS`11.1`，使用一切正常。
 
 ## Tips
-1. 机型默认设定为iMAC19.1，使用前建议自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用 [OpenCore Configurator](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/OCC/OCC.zip)或[GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
+1. 机型默认设定为iMAC19.1，使用前建议自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用[OpenCore Configurator](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/OCC/OCC.zip)或[GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
    | 内容         | 对应位置                          |
    | ------------ | --------------------------------- |
    | Type         | `Generic` -> `SystemProductName`  |
