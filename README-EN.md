@@ -1,12 +1,12 @@
 # Hackintosh_AsusZ390P_i5-9600K_RX5500XT
 [中文](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/README.md)  | [English](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/README-EN.md)
 
-Reference[OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/). Treamline and setting in `EFI` and `config.plist`.
+Reference [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/). Treamline and setting in `EFI` and `config.plist`.
 
 The daily experience is close to Apple Macintosh, and no other problems have been found.
 
 ## Update
-+ 2021-01-10：Update[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5` and macOS`11.1`. Everything works fine.
++ 2021-01-10：Update [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5` and macOS`11.1`. Everything works fine.
 
 ## Tips
 1. The default setting of the model is iMAC19.1. Pleade generrate the three finger by yourself before used.
