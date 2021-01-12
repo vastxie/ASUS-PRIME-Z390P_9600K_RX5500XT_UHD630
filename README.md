@@ -5,6 +5,8 @@
 
 目前日常体验接近白苹果，暂未发现其他问题。
 
+Geekbench 5 单核跑分：1259 多核跑分：5681 OpenCL跑分：41933
+
 ## 更新
 + 2020-01-12：将机型更改为`iMAC20,2`（相比`iMac19,1` Geekbench跑分小幅提升），删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
 + 2021-01-10：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5`和macOS`11.1`，使用一切正常。
