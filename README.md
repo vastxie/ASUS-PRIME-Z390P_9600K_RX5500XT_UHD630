@@ -6,17 +6,18 @@
 目前日常体验接近白苹果，暂未发现其他问题。
 
 ## 更新
++ 2020-01-12：将机型更改为`iMAC20,2`，删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
 + 2021-01-10：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5`和macOS`11.1`，使用一切正常。
 
 ## Tips
-1. 机型默认设定为iMAC19.1，使用前建议自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用[OpenCore Configurator](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/OCC/OCC.zip)或[GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
+1. 机型默认设定为~~`iMAC19,1`~~ `iMAC20,2`，使用前建议自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用[OpenCore Configurator](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/OCC/OCC.zip)或[GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
    | 内容         | 对应位置                          |
    | ------------ | --------------------------------- |
    | Type         | `Generic` -> `SystemProductName`  |
    | Serial       | `Generic` -> `SystemSerialNumber` |
    | Board Serial | `Generic` -> `MLB`                |
    | SmUUID       | `Generic` -> `SystemUUID`         |
-2. RX5500XT显卡原生驱动。此外在ACPI中添加了`SSDT-RX 5500 XT.aml`并配合`dAGPM.kext`驱动来优化显卡性能。
+2. ~~RX5500XT显卡原生驱动。此外在ACPI中添加了`SSDT-RX 5500 XT.aml`并配合`dAGPM.kext`驱动来优化显卡性能。~~
 3. AirDrop & HandOff & Continuity 均能正常使用。
 4. 有线网卡使用`RealtekRTL8111.kext`正常驱动。
 5. EFI目录中标注了当前使用的驱动版本，可下载并在`./EFI/OC/Kexts/`中替换相关驱动进行升级。

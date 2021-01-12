@@ -6,17 +6,18 @@ Reference [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-G
 The daily experience is close to Apple Macintosh, and no other problems have been found.
 
 ## Update
-+ 2021-01-10：Update [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5` and macOS`11.1`. Everything works fine.
++ 2020-01-11: Change the model to `iMAC20,2`. Delete `SSDT-RX 5500 xt.aml` and `dagpm.kext`. 
++ 2021-01-10: Update [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5` and macOS`11.1`. Everything works fine.
 
 ## Tips
-1. The default setting of the model is iMAC19.1. Pleade generrate the three finger by yourself before used.
+1. The default setting of the model is ~~`iMAC19,1`~~ `iMAC20,2`. Pleade generrate the three finger by yourself before use.
    | PART         | COPY TO                           |
    | ------------ | --------------------------------- |
    | Type         | `Generic` -> `SystemProductName`  |
    | Serial       | `Generic` -> `SystemSerialNumber` |
    | Board Serial | `Generic` -> `MLB`                |
    | SmUUID       | `Generic` -> `SystemUUID`         |
-2. RX5500XT display native driver. In addition, `SSDT-RX 5500 xt.aml` has been added in ACPI and the driver `dagpm. kext` has been used to optimize the performance of the dGPU.
+2. ~~RX5500XT display native driver. In addition, `SSDT-RX 5500 xt.aml` has been added in ACPI and the driver `dagpm. kext` has been used to optimize the performance of the dGPU.~~
 3. AirDrop & HandOff & Continuity can be used normally.
 4. The wired network card is normally driven by `RealtekRTL8111.kext`.
 5. The current driver vesion has been marked in EFI directory. you can download and replace the relevant driver in `./EFI/OC/Kexts/` to upgrade.
