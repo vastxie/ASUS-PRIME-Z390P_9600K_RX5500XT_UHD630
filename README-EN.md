@@ -59,8 +59,7 @@ The following modifications were made after loading the default.
     │   ├── SSDT-AWAC.aml // Fixed system clock on newer hardware.
     │   ├── SSDT-EC-USBX.aml // Restore the embedded controller and USB power supply.
     │   ├── SSDT-PLUG.aml // CPU Power Management.
-    │   ├── SSDT-PMC.aml // NVRAM Support.
-    │   └── SSDT-RX 5500 XT.aml // Optimize RX5500XT Performance.
+    │   └── SSDT-PMC.aml // NVRAM Support.
     ├── Drivers
     │   ├── HfsPlus.efi
     │   └── OpenRuntime.efi
@@ -72,8 +71,7 @@ The following modifications were made after loading the default.
     │   ├── SMCSuperIO.kext // v1.1.9
     │   ├── USBInjectAll.kext // v0.7.5
     │   ├── VirtualSMC.kext // v1.1.9
-    │   ├── WhateverGreen.kext // v1.4.6
-    │   └── dAGPM.kext // v1.0.0
+    │   └── WhateverGreen.kext // v1.4.6
     ├── OpenCore.efi
     └── config.plist
 ```
