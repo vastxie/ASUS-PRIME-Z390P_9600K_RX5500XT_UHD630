@@ -5,6 +5,8 @@ Reference [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-G
 
 The daily experience is close to Apple Macintosh, and no other problems have been found.
 
+Geekbench 5 `Single-Core Score: 1259` `Multi-Core Score: 5681` `OpenCL Score: 41933`
+
 ## Update
 + 2020-01-11: Change the model to `iMAC20,2`. Delete `SSDT-RX 5500 xt.aml` and `dagpm.kext`. 
 + 2021-01-10: Update [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5` and macOS`11.1`. Everything works fine.
