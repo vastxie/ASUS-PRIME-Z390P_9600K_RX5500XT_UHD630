@@ -59,8 +59,7 @@ BIOS版本：2808，加载默认设置后做了以下修改：
     │   ├── SSDT-AWAC.aml // 修复在较新硬件上的系统时钟。
     │   ├── SSDT-EC-USBX.aml // 修复嵌入式控制器和USB电源。
     │   ├── SSDT-PLUG.aml // CPU电源管理。
-    │   ├── SSDT-PMC.aml // NVRAM支持。
-    │   └── SSDT-RX 5500 XT.aml // 优化RX5500XT显卡性能。
+    │   └── SSDT-PMC.aml // NVRAM支持。
     ├── Drivers
     │   ├── HfsPlus.efi
     │   └── OpenRuntime.efi
@@ -72,8 +71,7 @@ BIOS版本：2808，加载默认设置后做了以下修改：
     │   ├── SMCSuperIO.kext // v1.1.9
     │   ├── USBInjectAll.kext // v0.7.5
     │   ├── VirtualSMC.kext // v1.1.9
-    │   ├── WhateverGreen.kext // v1.4.6
-    │   └── dAGPM.kext // v1.0.0
+    │   └── WhateverGreen.kext // v1.4.6
     ├── OpenCore.efi
     └── config.plist
 ```
