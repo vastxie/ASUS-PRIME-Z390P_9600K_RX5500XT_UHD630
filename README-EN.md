@@ -8,8 +8,9 @@ The daily experience is close to Apple Macintosh, and no other problems have bee
 Geekbench 5 `Single-Core Score: 1259` `Multi-Core Score: 5681` `OpenCL Score: 41933`
 
 ## Update
-+ 2020-01-11: Change the model to `iMAC20,2`. Delete `SSDT-RX 5500 xt.aml` and `dagpm.kext`. 
-+ 2021-01-10: Update [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5` and macOS`11.1`. Everything works fine.
++ 01/16/2021：Customize USB，add `USBPorts.kext` patch. Fix the problem that USB3.0 devices cannot be used.
++ 01/11/2021: Change the model to `iMAC20,2`. Delete `SSDT-RX 5500 xt.aml` and `dagpm.kext`. 
++ 01/10/2021: Update [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5` and macOS`11.1`. Everything works fine.
 
 ## Tips
 1. The default setting of the model is ~~`iMAC19,1`~~ `iMAC20,2`. Pleade generrate the three finger by yourself before use.
@@ -59,7 +60,7 @@ The following modifications were made after loading the default.
 └── OC
     ├── ACPI
     │   ├── SSDT-AWAC.aml // Fixed system clock on newer hardware.
-    │   ├── SSDT-EC-USBX.aml // Restore the embedded controller and USB power supply.
+    │   ├── SSDT-EC-USBX.aml // Restore the embedded controller and USB power supply.(terminated)
     │   ├── SSDT-PLUG.aml // CPU Power Management.
     │   └── SSDT-PMC.aml // NVRAM Support.
     ├── Drivers
@@ -71,7 +72,8 @@ The following modifications were made after loading the default.
     │   ├── RealtekRTL8111.kext // v2.3.0
     │   ├── SMCProcessor.kext // v1.1.9
     │   ├── SMCSuperIO.kext // v1.1.9
-    │   ├── USBInjectAll.kext // v0.7.5
+    │   ├── USBInjectAll.kext // v0.7.5 (terminated)
+    │   ├── USBPorts.kext
     │   ├── VirtualSMC.kext // v1.1.9
     │   └── WhateverGreen.kext // v1.4.6
     ├── OpenCore.efi

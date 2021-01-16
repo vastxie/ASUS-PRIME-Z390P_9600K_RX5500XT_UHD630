@@ -8,11 +8,12 @@
 Geekbench 5 `单核跑分：1259` `多核跑分：5681` `OpenCL跑分：41933`
 
 ## 更新
-+ 2020-01-12：将机型更改为`iMAC20,2`（相比`iMac19,1` Geekbench跑分小幅提升），删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
++ 2021-01-16：定制USB，添加`USBPorts.kext`补丁，修复无法使用USB3.0设备的问题。
++ 2021-01-12：将机型更改为`iMAC20,2`（相比`iMac19,1` Geekbench跑分小幅提升），删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
 + 2021-01-10：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5`和macOS`11.1`，使用一切正常。
 
 ## Tips
-1. 机型默认设定为`iMAC20,2`，使用前建议自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用[OpenCore Configurator](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/OCC/OCC.zip)或[GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
+1. 机型默认设定为`iMAC20,2`，使用需自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用[OpenCore Configurator](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/OCC/OCC.zip)或[GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
    | 内容         | 对应位置                          |
    | ------------ | --------------------------------- |
    | Type         | `Generic` -> `SystemProductName`  |
@@ -59,7 +60,7 @@ BIOS版本：2808，加载默认设置后做了以下修改：
 └── OC
     ├── ACPI
     │   ├── SSDT-AWAC.aml // 修复在较新硬件上的系统时钟。
-    │   ├── SSDT-EC-USBX.aml // 修复嵌入式控制器和USB电源。
+    │   ├── SSDT-EC-USBX.aml // 修复嵌入式控制器和USB电源。(已停用)
     │   ├── SSDT-PLUG.aml // CPU电源管理。
     │   └── SSDT-PMC.aml // NVRAM支持。
     ├── Drivers
@@ -71,7 +72,8 @@ BIOS版本：2808，加载默认设置后做了以下修改：
     │   ├── RealtekRTL8111.kext // v2.3.0
     │   ├── SMCProcessor.kext // v1.1.9
     │   ├── SMCSuperIO.kext // v1.1.9
-    │   ├── USBInjectAll.kext // v0.7.5
+    │   ├── USBInjectAll.kext // v0.7.5（已停用）
+    │   ├── USBPorts.kext
     │   ├── VirtualSMC.kext // v1.1.9
     │   └── WhateverGreen.kext // v1.4.6
     ├── OpenCore.efi
