@@ -6,7 +6,7 @@
 目前日常体验接近白苹果，暂未发现其他问题。
 
 ## 更新
-+ 2020-02-05:升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.6`。
++ 2020-02-05:升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.6`和macOS`11.2`。
 + 2021-01-16：定制USB，添加`USBPorts.kext`补丁，修复无法使用USB3.0设备的问题。
 + 2021-01-12：将机型更改为`iMAC20,2`（相比`iMac19,1` Geekbench跑分小幅提升），删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
 + 2021-01-10：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5`和macOS`11.1`，使用一切正常。

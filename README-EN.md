@@ -6,7 +6,7 @@ Reference [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-G
 The daily experience is close to Apple Macintosh, and no other problems have been found.
 
 ## Update
-+ 02/05/2021: Update[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.6`.
++ 02/05/2021: Update[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.6` and macOS`11.2`.
 + 01/16/2021：Customize USB，add `USBPorts.kext` patch. Fix the problem that USB3.0 devices cannot be used.
 + 01/11/2021: Change the model to `iMAC20,2`. Delete `SSDT-RX 5500 xt.aml` and `dagpm.kext`. 
 + 01/10/2021: Update [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5` and macOS`11.1`. Everything works fine.
