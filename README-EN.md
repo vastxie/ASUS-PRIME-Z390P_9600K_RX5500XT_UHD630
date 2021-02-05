@@ -5,15 +5,14 @@ Reference [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-G
 
 The daily experience is close to Apple Macintosh, and no other problems have been found.
 
-Geekbench 5 `Single-Core Score: 1259` `Multi-Core Score: 5681` `OpenCL Score: 41933`
-
 ## Update
++ 02/05/2021: Update[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.6`.
 + 01/16/2021：Customize USB，add `USBPorts.kext` patch. Fix the problem that USB3.0 devices cannot be used.
 + 01/11/2021: Change the model to `iMAC20,2`. Delete `SSDT-RX 5500 xt.aml` and `dagpm.kext`. 
 + 01/10/2021: Update [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5` and macOS`11.1`. Everything works fine.
 
 ## Tips
-1. The default setting of the model is ~~`iMAC19,1`~~ `iMAC20,2`. Pleade generrate the three finger by yourself before use.
+1. The default setting of the model is ~~`iMAC19,1`. Pleade generrate the three finger by yourself before use.
    | PART         | COPY TO                           |
    | ------------ | --------------------------------- |
    | Type         | `Generic` -> `SystemProductName`  |
@@ -30,27 +29,27 @@ Geekbench 5 `Single-Core Score: 1259` `Multi-Core Score: 5681` `OpenCL Score: 41
 | -------------- | --------- | ------------------- | --------------------------------------------------------------------------------------- |
 | Motherboard    | ASUS      | PRIME Z390-P        |                                                                                         |
 | CPU            | Intel     | i5-9600K            |                                                                                         |
-| Video Card     | Sapphire  | RX 5500 XT          | [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases) v1.4.6      |
+| Video Card     | Sapphire  | RX 5500 XT          | [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases) v1.4.7      |
 | WiFi/Bluetooth | Fenvi     | FV-T919 BCM94360CD  | native driver                                                                           |
 | Memory         | USCORSAIR | DDR4 3600（8G * 4） |                                                                                         |
 | Storage        | SAMSUNG   | 970PRO 512G         |
-| Network Card   | Realtek   | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.5.6                |
+| Network Card   | Realtek   | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.5.7                |
 | Sound Card     | Realtek®  | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) v2.3.0 |
-| Sensor         |           |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.1.9            |
+| Sensor         |           |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.2.0            |
 | USB            |           |                     | [USBInjectALL.kext](https://github.com/Sniki/OS-X-USB-Inject-All/releases) v0.7.5       |
-| Other          |           |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases) v1.5.0                        |
+| Other          |           |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases) v1.5.1                        |
 
 ## Bios Setting
 Bios version：2808.
 The following modifications were made after loading the default.
-+ Intel(VMX)Virtualization Technology `Enabled`
-+ Above 4G Decoding `Enabled`
-+ iGPU Multi-Monitor `Enabled`
-+ Hyper M.2X16 `Enabled`
-+ Serial Port `Disabled`
-+ XHCI Hand-off `Enabled`
-+ Fast Boot `Disabled`
-+ Wait For 'F1' If Error `Disabled`
++ Intel(VMX)Virtualization Technology [Disabled]->[Enabled]
++ iGPU Multi-Monitor [Disabled]->[Enabled]
++ DVMT Pre-Allocated [64M]->[128M] 
++ RC6(Render Srtandby) [Disabled]->[Auto]
++ Serial Port [Enabled]->[Disabled]
++ XHCI Hand-off [Disabled]->[Enabled]
++ Fast Boot [Enabled]->[Disabled]
++ Wait For 'F1' If Error [Enabled]->[Disabled]
 
 ## EFI Directory
 ```
@@ -67,15 +66,15 @@ The following modifications were made after loading the default.
     │   ├── HfsPlus.efi
     │   └── OpenRuntime.efi
     ├── Kexts
-    │   ├── AppleALC.kext // v1.5.6
-    │   ├── Lilu.kext // v1.5.0
-    │   ├── RealtekRTL8111.kext // v2.3.0
-    │   ├── SMCProcessor.kext // v1.1.9
-    │   ├── SMCSuperIO.kext // v1.1.9
-    │   ├── USBInjectAll.kext // v0.7.5 (terminated)
+    │   ├── AppleALC.kext
+    │   ├── Lilu.kext
+    │   ├── RealtekRTL8111.kext
+    │   ├── SMCProcessor.kext
+    │   ├── SMCSuperIO.kext
+    │   ├── USBInjectAll.kext //（terminated）
     │   ├── USBPorts.kext
-    │   ├── VirtualSMC.kext // v1.1.9
-    │   └── WhateverGreen.kext // v1.4.6
+    │   ├── VirtualSMC.kext
+    │   └── WhateverGreen.kext
     ├── OpenCore.efi
     └── config.plist
 ```

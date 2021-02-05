@@ -5,15 +5,14 @@
 
 目前日常体验接近白苹果，暂未发现其他问题。
 
-Geekbench 5 `单核跑分：1259` `多核跑分：5681` `OpenCL跑分：41933`
-
 ## 更新
++ 2020-02-05:升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.6`。
 + 2021-01-16：定制USB，添加`USBPorts.kext`补丁，修复无法使用USB3.0设备的问题。
 + 2021-01-12：将机型更改为`iMAC20,2`（相比`iMac19,1` Geekbench跑分小幅提升），删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
 + 2021-01-10：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5`和macOS`11.1`，使用一切正常。
 
 ## Tips
-1. 机型默认设定为`iMAC20,2`，使用需自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用[OpenCore Configurator](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/OCC/OCC.zip)或[GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
+1. 机型默认设定为`iMAC19,1`，使用需自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用[OpenCore Configurator]或[GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
    | 内容         | 对应位置                          |
    | ------------ | --------------------------------- |
    | Type         | `Generic` -> `SystemProductName`  |
@@ -31,26 +30,26 @@ Geekbench 5 `单核跑分：1259` `多核跑分：5681` `OpenCL跑分：41933`
 | --------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------- |
 | 主板      | 华硕-（ASUS）         | PRIME Z390-P        |                                                                                             |
 | CPU       | 英特尔（Intel）       | i5-9600K            |                                                                                             |
-| 显卡      | 蓝宝石（Sapphire）    | RX 5500 XT          | 原生支持 [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases) v1.4.6 |
+| 显卡      | 蓝宝石（Sapphire）    | RX 5500 XT          | 原生支持 [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases) v1.4.7 |
 | WiFi/蓝牙 | 奋威（Fenvi）         | FV-T919 BCM94360CD  | 免驱                                                                                        |
 | 内存      | 美商海盗船(USCORSAIR) | DDR4 3600（8G * 4） |                                                                                             |
 | 硬盘      | 三星（SAMSUNG）       | 970PRO 512G         |
-| 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.5.6                    |
+| 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.5.7                    |
 | 板载网卡  | Realtek®              | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) v2.3.0     |
-| 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.1.9                |
+| 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.2.0                |
 | USB       |                       |                     | [USBInjectALL.kext](https://github.com/Sniki/OS-X-USB-Inject-All/releases) v0.7.5           |
-| 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases) v1.5.0                            |
+| 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases) v1.5.1                            |
 
 ## Bios设置
 BIOS版本：2808，加载默认设置后做了以下修改：
-+ Intel(VMX)Virtualization Technology `Enabled`
-+ 大于4G地址空间解码 `Enabled`
-+ 初始化iGPU `Enabled`
-+ Hyper M.2X16 `Enabled`
-+ Serial Port `Disabled`
-+ XHCI Hand-off `Enabled`
-+ 快速启动 `Disabled`
-+ 若出现错误等待按下F1键 `Disabled`
++ Intel(VMX)Virtualization Technology [Disabled]->[Enabled]
++ 初始化iGPU [Disabled]->[Enabled]
++ DVMT Pre-Allocated [64M]->[128M] 
++ RC6(Render Srtandby) [Disabled]->[Auto]
++ Serial Port [Enabled]->[Disabled]
++ XHCI Hand-off [Disabled]->[Enabled]
++ 快速启动 [Enabled]->[Disabled]
++ 若出现错误等待按下F1键 [Enabled]->[Disabled]
 
 ## EFI目录
 ```
@@ -67,15 +66,15 @@ BIOS版本：2808，加载默认设置后做了以下修改：
     │   ├── HfsPlus.efi
     │   └── OpenRuntime.efi
     ├── Kexts
-    │   ├── AppleALC.kext // v1.5.6
-    │   ├── Lilu.kext // v1.5.0
-    │   ├── RealtekRTL8111.kext // v2.3.0
-    │   ├── SMCProcessor.kext // v1.1.9
-    │   ├── SMCSuperIO.kext // v1.1.9
-    │   ├── USBInjectAll.kext // v0.7.5（已停用）
+    │   ├── AppleALC.kext
+    │   ├── Lilu.kext
+    │   ├── RealtekRTL8111.kext
+    │   ├── SMCProcessor.kext
+    │   ├── SMCSuperIO.kext
+    │   ├── USBInjectAll.kext // (已停用)
     │   ├── USBPorts.kext
-    │   ├── VirtualSMC.kext // v1.1.9
-    │   └── WhateverGreen.kext // v1.4.6
+    │   ├── VirtualSMC.kext
+    │   └── WhateverGreen.kext
     ├── OpenCore.efi
     └── config.plist
 ```
