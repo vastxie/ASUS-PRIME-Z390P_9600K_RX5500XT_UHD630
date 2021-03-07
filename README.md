@@ -1,12 +1,12 @@
 # 黑苹果_华硕Z390P_i5-9600K_RX5500XT
-[中文](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/README.md)  ｜ [English](https://github.com/vastxie/ASUS-PRIME-Z390-P_i5-9600K_RX5500XT/blob/main/README-EN.md)
 
 参考[OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对`EFI`及`config.plist`做了精简和设置。
 
 目前日常体验接近白苹果，暂未发现其他问题。
 
 ## 更新
-+ 2020-02-05：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.6`和macOS`11.2`。
++ 2021-03-07: 升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.7`及最新驱动。 
++ 2021-02-05：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.6`和macOS`11.2`。
 + 2021-01-16：定制USB，添加`USBPorts.kext`补丁，修复无法使用USB3.0设备的问题。
 + 2021-01-12：将机型更改为`iMAC20,2`（相比`iMac19,1` Geekbench跑分小幅提升），删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
 + 2021-01-10：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5`和macOS`11.1`，使用一切正常。
@@ -30,13 +30,13 @@
 | --------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------- |
 | 主板      | 华硕-（ASUS）         | PRIME Z390-P        |                                                                                             |
 | CPU       | 英特尔（Intel）       | i5-9600K            |                                                                                             |
-| 显卡      | 蓝宝石（Sapphire）    | RX 5500 XT          | 原生支持 [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases) v1.4.7 |
+| 显卡      | 蓝宝石（Sapphire）    | RX 5500 XT          | 原生支持 [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases) v1.4.8 |
 | WiFi/蓝牙 | 奋威（Fenvi）         | FV-T919 BCM94360CD  | 免驱                                                                                        |
 | 内存      | 美商海盗船(USCORSAIR) | DDR4 3600（8G * 4） |                                                                                             |
 | 硬盘      | 三星（SAMSUNG）       | 970PRO 512G         |
-| 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.5.7                    |
-| 板载网卡  | Realtek®              | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) v2.3.0     |
-| 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.2.0                |
+| 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.5.8                    |
+| 板载网卡  | Realtek®              | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) v2.4.0     |
+| 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.2.1                |
 | USB       |                       |                     | [USBInjectALL.kext](https://github.com/Sniki/OS-X-USB-Inject-All/releases) v0.7.5           |
 | 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases) v1.5.1                            |
 
