@@ -5,7 +5,7 @@
 目前日常体验接近白苹果，暂未发现其他问题。
 
 ## 更新
-+ 2021-03-07: 升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.7`及最新驱动。 
++ 2021-03-07：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.7`及最新驱动。 
 + 2021-02-05：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.6`和macOS`11.2`。
 + 2021-01-16：定制USB，添加`USBPorts.kext`补丁，修复无法使用USB3.0设备的问题。
 + 2021-01-12：将机型更改为`iMAC20,2`（相比`iMac19,1` Geekbench跑分小幅提升），删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
@@ -72,8 +72,8 @@ BIOS版本：2808，加载默认设置后做了以下修改：
     │   ├── SMCProcessor.kext
     │   ├── SMCSuperIO.kext
     │   ├── USBInjectAll.kext // (已停用)
-    │   ├── USBPorts.kext
-    │   ├── VirtualSMC.kext
+    │   ├── USBPorts.kext //（定制USB驱动）
+    │   ├── VirtualSMC.kext
     │   └── WhateverGreen.kext
     ├── OpenCore.efi
     └── config.plist
