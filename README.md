@@ -78,3 +78,15 @@ BIOS版本：2808，加载默认设置后做了以下修改：
     ├── OpenCore.efi
     └── config.plist
 ```
+
+## 更新OpenCore
+
+1. 下载OpenCore(https://github.com/acidanthera/OpenCorePkg/releases)最新版本。
+2. 准备一个新的启动介质（在U盘或硬盘新建EFI分区），挂载系统启动分区，复制旧EFI文件夹到新介质。
+3. 需要更新的内容：
+   + `EFI/BOOT/BOOTx64.efi`
+   + `EFI/OC/OpenCore.efi`
+   + `EFI/OC/Drivers/OpenRuntime`
+4. 更新`EFI/OC/Kexts`中的驱动。
+5. 更新`EFI/OC/config.plist`：比较config.plist和sample.plist，确保配置符合最新版本的OpenCore。
+6. 确保更新的EFI可正常使用，并替换旧的EFI文件夹。
