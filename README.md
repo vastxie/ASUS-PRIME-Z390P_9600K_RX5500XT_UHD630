@@ -81,7 +81,7 @@ BIOS版本：2808，加载默认设置后做了以下修改：
 
 ## 更新OpenCore
 
-1. 下载OpenCore(https://github.com/acidanthera/OpenCorePkg/releases)最新版本。
+1. 下载[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)最新版本。
 2. 准备一个新的启动介质（在U盘或硬盘新建EFI分区），挂载系统启动分区，复制旧EFI文件夹到新介质。
 3. 需要更新的内容：
    + `EFI/BOOT/BOOTx64.efi`
