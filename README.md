@@ -5,14 +5,14 @@
 目前日常体验接近白苹果，暂未发现其他问题。
 
 ## 更新
-+ 2021-03-07：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.7`及最新驱动。 
-+ 2021-02-05：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.6`和macOS`11.2`。
++ 2021-03-07：升级 OpenCore`0.6.7`及最新驱动。 
++ 2021-02-05：升级 OpenCore`0.6.6`和macOS`11.2`。
 + 2021-01-16：定制USB，添加`USBPorts.kext`补丁，修复无法使用USB3.0设备的问题。
-+ 2021-01-12：将机型更改为`iMAC20,2`（相比`iMac19,1` Geekbench跑分小幅提升），删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
-+ 2021-01-10：升级[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)`0.6.5`和macOS`11.1`，使用一切正常。
++ 2021-01-12：删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
++ 2021-01-10：升级 OpenCore`0.6.5`和macOS`11.1`，使用一切正常。
 
 ## Tips
-1. 机型默认设定为`iMAC19,1`，使用需自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用[OpenCore Configurator]或[GenSMBIOS](https://github.com/corpnewt/GenSMBIOS)等生成）
+1. 机型默认设定为`iMAC19,1`，使用需自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用 OpenCore Configurator 或 GenSMBIOS 等生成）
    | 内容         | 对应位置                          |
    | ------------ | --------------------------------- |
    | Type         | `Generic` -> `SystemProductName`  |
@@ -23,7 +23,7 @@
 3. AirDrop & HandOff & Continuity 均能正常使用。
 4. 有线网卡使用`RealtekRTL8111.kext`正常驱动。
 5. EFI目录中标注了当前使用的驱动版本，可下载并在`./EFI/OC/Kexts/`中替换相关驱动进行升级。
-6. 基于`Coffee Lake`架构的的黑苹果设备均可使用本EFI，根据核显及独显的不同使用，可能需要在`config.plist` -> `DeviceProperties` -> `Add` -> `PciRoot(0x0)/Pci(0x2,0x0)`相应调整。
+6. 基于`Coffee Lake`架构的的黑苹果设备均可使用本EFI，根据核显及独显的不同使用，需在`config.plist` -> `DeviceProperties` -> `Add` -> `PciRoot(0x0)/Pci(0x2,0x0)`中相应调整。
 
 ## 硬件及驱动
 | 配置      | 品牌                  | 型号                | 驱动                                                                                        |
@@ -81,12 +81,12 @@ BIOS版本：2808，加载默认设置后做了以下修改：
 
 ## 更新OpenCore
 
-1. 下载[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)最新版本。
-2. 准备一个新的启动介质（在U盘或硬盘新建EFI分区），挂载系统启动分区，复制旧EFI文件夹到新介质。
+1. 下载[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)。
+2. 预备一个新的启动介质（在U盘或硬盘新建EFI分区），挂载系统启动分区，复制旧EFI文件夹到新介质。
 3. 需要更新的内容：
    + `EFI/BOOT/BOOTx64.efi`
    + `EFI/OC/OpenCore.efi`
    + `EFI/OC/Drivers/OpenRuntime`
 4. 更新`EFI/OC/Kexts`中的驱动。
-5. 更新`EFI/OC/config.plist`：比较config.plist和sample.plist，确保配置符合最新版本的OpenCore。
-6. 确保更新的EFI可正常使用，并替换旧的EFI文件夹。
+5. 更新`EFI/OC/config.plist`：比较`config.plist`和`sample.plist`，确保配置符合最新版本的 OpenCore。
+6. 确认更新的EFI可正常使用后，替换旧的EFI文件夹。
