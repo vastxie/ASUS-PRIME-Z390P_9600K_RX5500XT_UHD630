@@ -2,6 +2,8 @@
 
 参考[OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对`EFI`及`config.plist`做了精简和设置。
 
+本`EFI`适用于使用`Coffee Lake`架构的`CPU`，并使用`RX5000`系列显卡作为独显或不使用独显仅使用`Intel UHD Graphics 630`核显的设备。
+
 AirDrop & HandOff & Continuity 均能正常使用。
 日常体验接近白苹果，暂未发现其他问题。
 
@@ -24,8 +26,10 @@ AirDrop & HandOff & Continuity 均能正常使用。
    | Serial       | `Generic` -> `SystemSerialNumber` |
    | Board Serial | `Generic` -> `MLB`                |
    | SmUUID       | `Generic` -> `SystemUUID`         |
-2. 理论上基于`Coffee Lake`架构的`CPU`均可使用此EFI来引导启动黑苹果设备，默认`config.plist`为使用RX5000系列显卡驱动显示屏，核显仅用于计算。若仅用核显，需用`./EFI/OC/config-核显.plist`替换默认`config.plist`。
-3. 不同机箱可能出现一些USB接口无法使用的情况，可使用[Hackintool](https://github.com/headkaze/Hackintool/releases) 工具定制USB驱动并替换 `./EFI/OC/Kexts/USBPorts.kext`。
+2. 理论上基于`Coffee Lake`架构的`CPU`均可使用此`EFI`来引导启动黑苹果设备。
+   默认`config.plist`为核显用于计算，使用`RX5000`系列显卡驱动显示屏。
+   若不使用独显仅使用用核显，需用`./EFI/OC/config-核显.plist`替换默认`config.plist`。
+4. 不同机箱可能出现一些USB接口无法使用的情况，可使用[Hackintool](https://github.com/headkaze/Hackintool/releases) 工具定制USB驱动并替换 `./EFI/OC/Kexts/USBPorts.kext`。
 
 ## 硬件及驱动
 
