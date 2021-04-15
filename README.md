@@ -7,6 +7,7 @@ AirDrop & HandOff & Continuity 均能正常使用。
 
 ## 更新
 
++ 2021-04-15：精简`EFI`,添加`config-核显.plist`。
 + 2021-04-11：升级 OpenCore`0.6.8`，更新驱动到最新版本。
 + 2021-03-07：升级 OpenCore`0.6.7`及最新驱动。
 + 2021-02-05：升级 OpenCore`0.6.6`和macOS`11.2`。
