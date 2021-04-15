@@ -2,6 +2,7 @@
 
 参考[OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对`EFI`及`config.plist`做了精简和设置。
 
+AirDrop & HandOff & Continuity 均能正常使用。
 日常体验接近白苹果，暂未发现其他问题。
 
 ## 更新
@@ -13,22 +14,21 @@
 + 2021-01-12：删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
 + 2021-01-10：升级 OpenCore`0.6.5`和macOS`11.1`，使用一切正常。
 
-## Tips
+## 使用指南
 
-1. 机型默认设定为`iMAC19,1`，可自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用 OpenCore Configurator 或 GenSMBIOS 等生成）
+1. 默认机型为`iMAC19,1`，需自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用 OpenCore Configurator 或 GenSMBIOS 等生成）
    | 内容         | 对应位置                          |
    | ------------ | --------------------------------- |
    | Type         | `Generic` -> `SystemProductName`  |
    | Serial       | `Generic` -> `SystemSerialNumber` |
    | Board Serial | `Generic` -> `MLB`                |
    | SmUUID       | `Generic` -> `SystemUUID`         |
-2. ~~RX5500XT显卡原生驱动。此外在ACPI中添加了`SSDT-RX 5500 XT.aml`并配合`dAGPM.kext`驱动来优化显卡性能。（已停用）~~
-3. AirDrop & HandOff & Continuity 均能正常使用。
-4. 有线网卡使用`RealtekRTL8111.kext`正常驱动。
-5. 驱动列表标注了当前使用的驱动版本，可在`./EFI/OC/Kexts/`中替换相关驱动进行升级。
-6. 基于`Coffee Lake`架构的的黑苹果设备均可使用本EFI，根据核显及独显的不同使用，需在`config.plist` -> `DeviceProperties` -> `Add` -> `PciRoot(0x0)/Pci(0x2,0x0)`中相应调整。
+2. 理论上基于`Coffee Lake`架构的`CPU`均可使用此EFI来引导启动黑苹果设备，默认`config.plist`为使用RX5000系列显卡驱动显示屏，核显仅用于计算。若仅用核显，需用`./EFI/OC/config-核显.plist`替换默认`config.plist`。
+3. 不同机箱可能出现一些USB接口无法使用的情况，可使用[Hackintool](https://github.com/headkaze/Hackintool/releases) 工具定制USB驱动并替换 `./EFI/OC/Kexts/USBPorts.kext`。
 
 ## 硬件及驱动
+
+表中标注了当前使用的驱动版本，可在`./EFI/OC/Kexts/`中替换相关驱动进行升级。
 
 | 配置      | 品牌                  | 型号                | 驱动                                                                                        |
 | --------- | --------------------- | ------------------- | ------------------------------------------------------------------------------------------- |
@@ -41,7 +41,6 @@
 | 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.5.9                    |
 | 板载网卡  | Realtek®              | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) v2.4.0     |
 | 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.2.2                |
-| USB       |                       |                     | [USBInjectALL.kext](https://github.com/Sniki/OS-X-USB-Inject-All/releases) v0.7.5           |
 | 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases) v1.5.2                            |
 
 ## Bios设置
@@ -66,13 +65,9 @@ EFI
 └── OC
     ├── ACPI
     │   ├── SSDT-AWAC-DISABLE.aml // 修复在较新硬件上的系统时钟。
-    │   ├── SSDT-EC-USBX.aml  // 修复嵌入式控制器和USB电源,配合SSDT-EC.aml和SSDT-UIAC.aml定制USB驱动
-    │   ├── SSDT-EC.aml
     │   ├── SSDT-PLUG.aml // CPU电源管理。
     │   ├── SSDT-PMC.aml  // NVRAM支持。
-    │   └── SSDT-UIAC.aml
     ├── Drivers
-    │   ├── HfsPlus.efi
     │   ├── OpenHfsPlus.efi
     │   └── OpenRuntime.efi
     ├── Kexts
@@ -81,21 +76,15 @@ EFI
     │   ├── RealtekRTL8111.kext
     │   ├── SMCProcessor.kext
     │   ├── SMCSuperIO.kext
-    │   ├── USBInjectAll.kext // (已停用)
-    │   ├── USBPorts.kext
+    │   ├── USBPorts.kext //定制USB驱动
     │   ├── VirtualSMC.kext
     │   └── WhateverGreen.kext
     ├── OpenCore.efi
-    ├── Resources
-    │   ├── Audio
-    │   ├── Font
-    │   ├── Image
-    │   └── Label
-    ├── Tools
+    ├── config-核显.plist
     └── config.plist
 ```
 
-## 更新OpenCore
+## 如何更新OpenCore
 
 1. 下载[OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)。
 2. 预备一个新的启动介质（在U盘或硬盘新建EFI分区），挂载系统启动分区，复制旧EFI文件夹到新介质。
