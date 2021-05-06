@@ -9,6 +9,7 @@ AirDrop & HandOff & Continuity 均能正常使用。
 
 ## 更新
 
++ 2021-05-05：升级 OpenCore`0.6.9`，更新最新驱动，更新macOS版本到11.3.1。
 + 2021-04-15：精简`EFI`,添加`config-核显.plist`。
 + 2021-04-11：升级 OpenCore`0.6.8`，更新驱动到最新版本。
 + 2021-03-07：升级 OpenCore`0.6.7`及最新驱动。
@@ -27,8 +28,8 @@ AirDrop & HandOff & Continuity 均能正常使用。
    | Board Serial | `Generic` -> `MLB`                |
    | SmUUID       | `Generic` -> `SystemUUID`         |
 2. 理论上基于`Coffee Lake`架构的`CPU`均可使用此`EFI`来引导启动黑苹果设备。
-   + 默认`config.plist`为核显用于计算，使用`RX5000`系列显卡驱动显示屏。
-   + 若不使用独显仅使用核显，需用`./EFI/OC/config-核显.plist`替换默认的`config.plist`文件。
+   + 只使用核显需将`./EFI/OC/config-核显.plist`重命名为`config.plist`。
+   + 若使用独显需将`./EFI/OC/config-独显.plist`重命名为`config.plist`。
 3. 不同机箱可能出现一些USB接口无法使用的情况，可使用[Hackintool](https://github.com/headkaze/Hackintool/releases) 工具定制USB驱动并替换 `./EFI/OC/Kexts/USBPorts.kext`。
 
 ## 硬件及驱动
@@ -43,10 +44,10 @@ AirDrop & HandOff & Continuity 均能正常使用。
 | WiFi/蓝牙 | 奋威（Fenvi）         | FV-T919 BCM94360CD  | 免驱                                                                                        |
 | 内存      | 美商海盗船(USCORSAIR) | DDR4 3600（8G * 4） |                                                                                             |
 | 硬盘      | 三星（SAMSUNG）       | 970PRO 512G         |
-| 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.5.9                    |
+| 板载声卡  | Realtek               | ALC887              | [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases) v1.6.0                    |
 | 板载网卡  | Realtek®              | RTL8111H            | [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases) v2.4.0     |
-| 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.2.2                |
-| 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases) v1.5.2                            |
+| 传感器    |                       |                     | [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases) v1.2.3                |
+| 其他      |                       |                     | [Lilu.kext](https://github.com/acidanthera/Lilu/releases) v1.5.3                            |
 
 ## Bios设置
 
