@@ -87,7 +87,7 @@ EFI
     │   └── WhateverGreen.kext
     ├── OpenCore.efi
     ├── config-核显.plist
-    └── config.plist
+    └── config-独显.plist
 ```
 
 ## 如何更新OpenCore
