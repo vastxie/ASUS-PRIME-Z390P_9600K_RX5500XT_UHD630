@@ -1,6 +1,6 @@
 # 黑苹果_华硕Z390P_i5-9600K_RX5500XT
 
-OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630.
+OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 
 参考 [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对 EFI 及`config.plist`进行了修改和精简。
 
@@ -8,8 +8,8 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630.
 
 ## 更新
 
-- 2021-07-07：升级 OpenCore 0.7.1，更新驱动，更新macOS版本 11.4。
-- 2021-05-05：升级 OpenCore 0.6.9，更新驱动，更新macOS版本 11.3.1。
+- 2021-07-07：升级 OpenCore 0.7.1，更新驱动，更新 macOS 版本 11.4。
+- 2021-05-05：升级 OpenCore 0.6.9，更新驱动，更新 macOS 版本 11.3.1。
 - 2021-04-15：精简 EFI，添加`config-核显.plist`。
 - 2021-04-11：升级 OpenCore 0.6.8，更新驱动。
 - 2021-03-07：升级 OpenCore 0.6.7，更新驱动。
@@ -21,9 +21,12 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630.
 ## 使用指南
 
 1. 默认机型为 iMAC19,1，需自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用 OpenCore Configurator 或 GenSMBIOS 等工具生成并修改）
+
 2. 理论上基于 Coffee Lake 架构的 CPU 均可使用此 EFI 来引导启动黑苹果设备。可根据显卡使用情况自行选择`congfig.plist`文件。
+
    - 只使用核显需将`./EFI/OC/config-核显.plist`文件重命名为`config.plist`。
    - 若使用独显需将`./EFI/OC/config-独显.plist`文件重命名为`config.plist`。
+
 3. 机箱不同可能出现一些USB接口无法使用的情况，可使用 [Hackintool](https://github.com/headkaze/Hackintool/releases) 工具定制USB驱动并替换`./EFI/OC/Kexts/USBPorts.kext`驱动文件。
 
 ## Bios设置
@@ -88,19 +91,19 @@ EFI
 
 3. 需要更新的内容：
 
-   + `EFI/BOOT/BOOTx64.efi`
-   + `EFI/OC/OpenCore.efi`
-   + `EFI/OC/Drivers/OpenRuntime`
+   - `EFI/BOOT/BOOTx64.efi`
+   - `EFI/OC/OpenCore.efi`
+   - `EFI/OC/Drivers/OpenRuntime`
 
 4. 更新`EFI/OC/Kexts`中的驱动：
 
-   + [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases)
-   + [Lilu.kext](https://github.com/acidanthera/Lilu/releases)
-   + [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases)
-   + [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases)
-   + [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases)
+   - [AppleALC.kext](https://github.com/acidanthera/AppleALC/releases)
+   - [Lilu.kext](https://github.com/acidanthera/Lilu/releases)
+   - [RealtekRTL8111.kext](https://github.com/Mieze/RTL8111_driver_for_OS_X/releases)
+   - [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases)
+   - [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases)
 
-5. 更新`EFI/OC/config.plist`：比较`config.plist`和`sample.plist`并对应修改，确保配置符合最新版本的 OpenCore。
+5. 更新`EFI/OC/config.plist`：比较`config.plist`和`sample.plist`并对应修改，确保配置符合最的 OpenCore 版本。
 
 6. 完成 EFI 修改后重启，在启动菜单栏按空格键，显示更多选项，选择`rest nvram`选项，系统自动重启后会更新 OC 版本号。
 
