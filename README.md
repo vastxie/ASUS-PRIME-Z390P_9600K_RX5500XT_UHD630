@@ -2,7 +2,7 @@
 
 OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 
-参考 [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对 EFI 及`config.plist`进行了修改和精简。
+参考 [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对`EFI`及`config.plist`进行了修改和精简。
 
 日常体验接近白苹果，使用过程中未发现问题。
 
@@ -10,7 +10,7 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 
 - 2021-07-07：升级 OpenCore 0.7.1，更新驱动，更新 macOS 版本 11.4。
 - 2021-05-05：升级 OpenCore 0.6.9，更新驱动，更新 macOS 版本 11.3.1。
-- 2021-04-15：精简 EFI，添加`config-核显.plist`。
+- 2021-04-15：精简`EFI`，添加`config-核显.plist`。
 - 2021-04-11：升级 OpenCore 0.6.8，更新驱动。
 - 2021-03-07：升级 OpenCore 0.6.7，更新驱动。
 - 2021-02-05：升级 OpenCore 0.6.6，更新 macOS 11.2。
@@ -20,9 +20,9 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 
 ## 使用指南
 
-1. 默认机型为 iMAC19,1，需自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用 OpenCore Configurator 或 GenSMBIOS 等工具生成并修改）
+1. 默认机型为 iMAC19,1，需自行生成三码并在`config.plist` -> `PlatformInfo` -> `Generic`中对应修改。（可使用 OpenCore Configurator 或 GenSMBIOS 工具生成并修改）
 
-2. 理论上基于 Coffee Lake 架构的 CPU 均可使用此 EFI 来引导启动黑苹果设备。可根据显卡使用情况自行选择`congfig.plist`文件。
+2. 理论上基于 Coffee Lake 架构的 CPU 均可使用此`EFI`来引导启动黑苹果设备。可根据显卡使用情况自行选择`congfig.plist`文件。
 
    - 只使用核显需将`./EFI/OC/config-核显.plist`文件重命名为`config.plist`。
    - 若使用独显需将`./EFI/OC/config-独显.plist`文件重命名为`config.plist`。
@@ -87,7 +87,7 @@ EFI
 
 1. 下载最新的 [OpenCore](https://github.com/acidanthera/OpenCorePkg/releases)。
 
-2. 预备一个新的启动介质（在 U 盘或硬盘新建 EFI 分区），挂载系统启动分区，复制旧 EFI 文件夹到新介质。
+2. 预备一个新的启动介质（在 U 盘或硬盘新建`EFI`分区），挂载系统启动分区，复制旧`EFI`夹到新介质。
 
 3. 需要更新的内容：
 
@@ -105,6 +105,6 @@ EFI
 
 5. 更新`EFI/OC/config.plist`：比较`config.plist`和`sample.plist`并对应修改，确保配置符合最的 OpenCore 版本。
 
-6. 完成 EFI 修改后重启，在启动菜单栏按空格键，显示更多选项，选择`rest nvram`选项，系统自动重启后会更新 OC 版本号。
+6. 完成`EFI`修改后重启，在启动菜单栏按空格键，显示更多选项，选择`rest nvram`选项，系统自动重启后会更新 OC 版本号。
 
-7. 确认更新的 EFI 可正常使用后，替换旧的 EFI 文件夹。
+7. 确认更新的`EFI`可正常使用后，替换旧的`EFI`文件夹。
