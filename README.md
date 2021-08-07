@@ -8,6 +8,7 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 
 ## 更新日志
 
+- 2021-08-07：升级 Opencore 0.7.2，更新驱动。
 - 2021-07-07：升级 OpenCore 0.7.1，更新驱动，更新 macOS 版本 11.4。
 - 2021-05-05：升级 OpenCore 0.6.9，更新驱动，更新 macOS 版本 11.3.1。
 - 2021-04-15：精简`EFI`，添加`config-核显.plist`。
@@ -24,8 +25,8 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 
 2. 理论上基于 Coffee Lake 架构的 CPU 均可使用此`EFI`来引导启动黑苹果设备。可根据显卡使用情况自行选择`congfig.plist`文件。
 
-   - 只使用核显需将`./EFI/OC/config-核显.plist`文件重命名为`config.plist`。
-   - 若使用独显需将`./EFI/OC/config-独显.plist`文件重命名为`config.plist`。
+   - 只使用核显需将`./EFI/OC/config_核显.plist`文件重命名为`config.plist`。
+   - 若使用独显需将`./EFI/OC/config_独显.plist`文件重命名为`config.plist`。
 
 3. 机箱不同可能出现一些USB接口无法使用的情况，可使用 [Hackintool](https://github.com/headkaze/Hackintool/releases) 工具定制USB驱动并替换`./EFI/OC/Kexts/USBPorts.kext`驱动文件。
 
