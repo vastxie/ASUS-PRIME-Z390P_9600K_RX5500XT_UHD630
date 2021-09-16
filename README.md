@@ -71,14 +71,14 @@ EFI
     │   ├── OpenHfsPlus.efi
     │   └── OpenRuntime.efi
     ├── Kexts
-    │   ├── AppleALC.kext //1.6.2
-    │   ├── Lilu.kext //1.5.4
+    │   ├── AppleALC.kext //1.6.4
+    │   ├── Lilu.kext //1.5.6
     │   ├── RealtekRTL8111.kext //2.4.2
     │   ├── SMCProcessor.kext 
     │   ├── SMCSuperIO.kext
     │   ├── USBPorts.kext //定制 USB 驱动
-    │   ├── VirtualSMC.kext //1.2.5
-    │   └── WhateverGreen.kext //1.5.1
+    │   ├── VirtualSMC.kext //1.2.7
+    │   └── WhateverGreen.kext //1.5.3
     ├── OpenCore.efi
     ├── config-核显.plist
     └── config-独显.plist
