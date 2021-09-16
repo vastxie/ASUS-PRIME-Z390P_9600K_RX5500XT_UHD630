@@ -8,6 +8,7 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 
 ## 更新日志
 
+- 2021-09-16：升级 Opencore 0.7.3，更新驱动。
 - 2021-08-07：升级 Opencore 0.7.2，更新驱动。
 - 2021-07-07：升级 OpenCore 0.7.1，更新驱动，更新 macOS 版本 11.4。
 - 2021-05-05：升级 OpenCore 0.6.9，更新驱动，更新 macOS 版本 11.3.1。
