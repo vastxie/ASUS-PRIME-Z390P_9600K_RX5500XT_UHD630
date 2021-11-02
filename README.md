@@ -8,6 +8,7 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 
 ## 更新日志
 
+- 2021-11-03：升级 Opencore 0.7.5，更新驱动；升级 macOS 12.0.1 。
 - 2021-09-16：升级 Opencore 0.7.3，更新驱动。
 - 2021-08-07：升级 Opencore 0.7.2，更新驱动。
 - 2021-07-07：升级 OpenCore 0.7.1，更新驱动，更新 macOS 版本 11.4。
@@ -72,14 +73,14 @@ EFI
     │   ├── OpenHfsPlus.efi
     │   └── OpenRuntime.efi
     ├── Kexts
-    │   ├── AppleALC.kext //1.6.4
-    │   ├── Lilu.kext //1.5.6
+    │   ├── AppleALC.kext //1.6.6
+    │   ├── Lilu.kext //1.5.7
     │   ├── RealtekRTL8111.kext //2.4.2
     │   ├── SMCProcessor.kext 
     │   ├── SMCSuperIO.kext
     │   ├── USBPorts.kext //定制 USB 驱动
     │   ├── VirtualSMC.kext //1.2.7
-    │   └── WhateverGreen.kext //1.5.3
+    │   └── WhateverGreen.kext //1.5.5
     ├── OpenCore.efi
     ├── config-核显.plist
     └── config-独显.plist
