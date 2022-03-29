@@ -24,7 +24,7 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 - 2021-02-05：升级 OpenCore 0.6.6，更新 macOS 11.2。
 - 2021-01-16：定制 USB，添加`USBPorts.kext`补丁，修复无法使用 USB 3.0 设备的问题。
 - 2021-01-12：删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
-- 2021-01-10：升级 OpenCore 0.6.5 和 macOS 11.1，使用一
+- 2021-01-10：升级 OpenCore 0.6.5 和 macOS 11.1。
 
 </details>
 
