@@ -4,10 +4,15 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 
 参考 [OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/)，对`EFI`及`config.plist`进行了修改和精简。
 
-日常体验接近白苹果，使用过程中未发现问题。
+日常体验接近白苹果。
 
-## 更新日志
+<details>
 
+<summary>
+更新日志
+</summary>
+
+- 2022-03-29：升级 Opencore 0.7.9，并更新相关驱动。
 - 2021-11-03：升级 Opencore 0.7.5，更新驱动；升级 macOS 12.0.1 。
 - 2021-09-16：升级 Opencore 0.7.3，更新驱动。
 - 2021-08-07：升级 Opencore 0.7.2，更新驱动。
@@ -19,7 +24,9 @@ OC EFI: ASUS PRIME Z390-P + i5-9600K Coffee Lake + RX5500/UHD 630
 - 2021-02-05：升级 OpenCore 0.6.6，更新 macOS 11.2。
 - 2021-01-16：定制 USB，添加`USBPorts.kext`补丁，修复无法使用 USB 3.0 设备的问题。
 - 2021-01-12：删除`SSDT-RX 5500 XT.aml`和`dAGPM.kext`。
-- 2021-01-10：升级 OpenCore 0.6.5 和 macOS 11.1，使用一切正常。
+- 2021-01-10：升级 OpenCore 0.6.5 和 macOS 11.1，使用一
+
+</details>
 
 ## 使用指南
 
@@ -38,7 +45,7 @@ BIOS 版本：2808，加载默认设置后做了以下修改：
 
 - Intel(VMX)Virtualization Technology [Disabled] -> [Enabled]
 - 初始化 iGPU [Disabled] -> [Enabled]
-- DVMT Pre-Allocated [64M] -> [128M] 
+- DVMT Pre-Allocated [64M] -> [128M]
 - RC6(Render Srtandby) [Disabled] -> [Auto]
 - Serial Port [Enabled] -> [Disabled]
 - XHCI Hand-off [Disabled] -> [Enabled]
@@ -73,14 +80,14 @@ EFI
     │   ├── OpenHfsPlus.efi
     │   └── OpenRuntime.efi
     ├── Kexts
-    │   ├── AppleALC.kext //1.6.6
-    │   ├── Lilu.kext //1.5.7
+    │   ├── AppleALC.kext //1.7.0
+    │   ├── Lilu.kext //1.6.0
     │   ├── RealtekRTL8111.kext //2.4.2
     │   ├── SMCProcessor.kext 
     │   ├── SMCSuperIO.kext
     │   ├── USBPorts.kext //定制 USB 驱动
-    │   ├── VirtualSMC.kext //1.2.7
-    │   └── WhateverGreen.kext //1.5.5
+    │   ├── VirtualSMC.kext //1.2.9
+    │   └── WhateverGreen.kext //1.5.8
     ├── OpenCore.efi
     ├── config-核显.plist
     └── config-独显.plist
@@ -92,7 +99,7 @@ EFI
 
 2. 预备一个新的启动介质（在 U 盘或硬盘新建`EFI`分区），挂载系统启动分区，复制旧`EFI`夹到新介质。
 
-3. 需要更新的内容：
+3. 替换需要更新的内容：
 
    - `EFI/BOOT/BOOTx64.efi`
    - `EFI/OC/OpenCore.efi`
@@ -106,7 +113,7 @@ EFI
    - [VirtualSMC.kext](https://github.com/acidanthera/virtualsmc/releases)
    - [WhateverGreen.kext](https://github.com/acidanthera/whatevergreen/releases)
 
-5. 更新`EFI/OC/config.plist`：比较`config.plist`和`sample.plist`并对应修改，确保配置符合最的 OpenCore 版本。
+5. `EFI/OC/config.plist`：比较`config.plist`和`sample.plist`并对应修改，确保配置符合最新的 OpenCore 版本。
 
 6. 完成`EFI`修改后重启，在启动菜单栏按空格键，显示更多选项，选择`rest nvram`选项，系统自动重启后会更新 OC 版本号。
 
